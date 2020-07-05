@@ -50,7 +50,7 @@ export default class SearchSubmissionsRoute extends Route {
       params.page = 0;
     }
 
-    query[`:sqs:data`] = isEmpty(params.search) ? "*" : params.search;
+    query[`:sqs:data.content`] = isEmpty(params.search) ? "*" : params.search;
     if (params.administrativeUnites) query["administrativeUnitUUID"] = params.administrativeUnites;
     if (params.administrativeUnitClassifications) {
       query["administrativeUnitClassificationUUID"] = params.administrativeUnitClassifications;
